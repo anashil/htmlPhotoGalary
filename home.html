@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo galary</title>
+    <style>
+        :root{
+  --width: 100%;
+  --height: 100%;
+  --border-width: 200px;
+  --border-height: 200px;
+
+}
+
+html,body{
+  background:radial-gradient(rgb(240, 213, 245),rgb(122, 6, 133));
+  height:100%;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.gallery{
+  position:relative;
+  height:100%;
+  width:100%;
+  margin-left: 20rem;
+  margin-top: 5rem;
+}
+
+.gallery:after{
+  content:'';
+}
+
+.shadow{
+  position: absolute;
+  top: 500px;
+  left: 140px;
+  width: 500px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#3a1e33,rgba(54, 37, 37, 0) 70%);
+}
+
+img{
+  width:var(--width);
+  height:var(--height);
+}
+
+.clipped-border{
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+   padding:5px;
+   background:linear-gradient(grey,lightgrey);
+   width:var(--border-width);
+   height:var(--border-height);
+   max-height:250px;
+   max-width:250px;
+   height: var(--height);
+   width:var(--width);
+   transition:transform 0.2s;
+   position:absolute;
+   cursor:pointer;
+}
+
+
+
+.clipped-border:before{
+  content:'';
+  position:absolute;
+  opacity:0.5;
+  width:350px;
+  height:70px;
+  background:white;
+  top:0;
+  left:0;
+  z-index:1;
+  transform:rotate(45deg);
+  transition:transform 0.5s;
+}
+
+.clipped-border:hover:before{
+  transform: translate(-100px,400%) rotate(45deg);
+  transition:transform 0.5s;
+}
+
+.clipped-border:nth-child(2){
+  top:196px;
+  left:118px;
+}
+
+.clipped-border:nth-child(3){
+  top:0;
+  left:235px;
+}
+
+.clipped-border:nth-child(4){
+  top:196px;
+  left:353px;
+}
+
+.clipped-border:nth-child(5){
+  top:0;
+  left:470px;
+}
+
+#clipped {
+-webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+
+}
+
+.clipped-border:hover{
+  transform:scale(1.2);
+  transition:transform 0.2s;
+  z-index:10;
+}
+
+
+@media screen and (max-width:500px){
+  .clipped-border{
+    width:100px;
+    height:100px;
+  }
+  
+  .clipped-border:nth-child(2){
+    top:0;
+    left:100px;
+  }
+  
+  .clipped-border:nth-child(3){
+    left:200px;
+  }
+  
+  .clipped-border:nth-child(4){
+    top:82px;
+    left:50px;
+  }
+  
+  .clipped-border:nth-child(5){
+    top:82px;
+    left:150px;
+  }
+}
+
+      </style>
+</head>
+<body>
+    <div class = "gallery">
+        <div class="clipped-border">
+          <img src="https://www.bing.com/th?id=OIP.0ku1AvUo__-ohxH4EqTXOAHaEo&w=249&h=165&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" id="clipped">
+        </div>
+        <div class="clipped-border">
+          <img src="https://www.bing.com/th?id=OIP.r8IqnZvajmcmfws6fDgfvwHaEo&w=259&h=165&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" id="clipped">
+        </div>
+        <div class="clipped-border">
+          <img src="https://www.bing.com/th?id=OIP.mz_MaW2oEpfIIFxSk_DTSAHaEo&w=259&h=165&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" id="clipped">
+        </div>
+          <div class="clipped-border">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.XaCZDy0uYwqy6EFd8CQltAHaEo?w=277&h=180&c=7&r=0&o=5&pid=1.7" id="clipped">
+        </div>
+          <div class="clipped-border">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.CcjLD-r39keM3LyAFGmYoQHaEo?w=298&h=185&c=7&r=0&o=5&pid=1.7" id="clipped">
+        </div>
+        <div class = "shadow"></div>
+      </div>
+      
+      
+</body>
+</html>
